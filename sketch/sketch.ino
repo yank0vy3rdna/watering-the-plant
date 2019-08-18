@@ -1,5 +1,5 @@
 const int OnTimeSecs = 150;
-const int OffTimeSecs = 6*3600-150;
+const int OffTimeSecs = 12*3600-150;
 #define relePin 4
 void setup() {
   pinMode(relePin, OUTPUT);
@@ -21,11 +21,11 @@ void loop()
   verybigdelay(OnTimeSecs);
   digitalWrite(relePin, HIGH);
   verybigdelay(OffTimeSecs);
-  if (indicateLed){
+  if (indicateLed==true){
     indicateLed = false;
-    digitalWrite(13,LOW);
+    digitalWrite(13,HIGH);
   }else{
     indicateLed = true;
-    digitalWrite(13,HIGH);
+    digitalWrite(13,LOW);
   }
 }
